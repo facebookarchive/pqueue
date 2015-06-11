@@ -49,7 +49,7 @@ func (pq *PriorityQueue) Push(x interface{}) {
 func (pq *PriorityQueue) Pop() interface{} {
 	n := len(*pq)
 	c := cap(*pq)
-	if n < (c/2) && c > 25 {
+	if n < (c/4) && c > 25 {
 		npq := make(PriorityQueue, n, c/2)
 		copy(npq, *pq)
 		*pq = npq
