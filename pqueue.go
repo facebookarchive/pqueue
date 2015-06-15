@@ -18,6 +18,9 @@ type PriorityQueue []*Item
 
 // New creates a PriorityQueue of the given capacity.
 func New(capacity int) PriorityQueue {
+	if capacity <= 0 {
+		capacity = 1
+	}
 	return make(PriorityQueue, 0, capacity)
 }
 

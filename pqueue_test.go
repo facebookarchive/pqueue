@@ -67,3 +67,8 @@ func TestRemove(t *testing.T) {
 		lastPriority = item.(*Item).Priority
 	}
 }
+
+func TestPriorityQueueWithZeroCapacity(t *testing.T) {
+	pq := New(0)
+	ensure.DeepEqual(t, cap(pq), 1)
+}
